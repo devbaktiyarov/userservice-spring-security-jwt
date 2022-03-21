@@ -32,6 +32,8 @@ public class UserserviceSpringSecurityJwtApplication {
             userService.saveRole(new Role(null, "ROLE_ADMIN"));
             userService.saveRole(new Role(null, "ROLE_SUPER_ADMIN"));
 
+            userService.saveUser(new User(null, "User", "user", "spring",
+                    new ArrayList<>()));
             userService.saveUser(new User(null, "Ryan", "ryan", "spring",
                     new ArrayList<>()));
             userService.saveUser(new User(null, "James", "james", "spring",
@@ -39,6 +41,7 @@ public class UserserviceSpringSecurityJwtApplication {
             userService.saveUser(new User(null, "Tony", "tony", "spring",
                     new ArrayList<>()));
 
+            userService.addRoleToUser("user", "ROLE_USER");
             userService.addRoleToUser("ryan", "ROLE_USER");
             userService.addRoleToUser("tony", "ROLE_ADMIN");
             userService.addRoleToUser("james", "ROLE_MANAGER");
